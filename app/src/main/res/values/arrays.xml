@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="contesti">
+        <item>settimana</item>
+        <item>weekend</item>
+        <item>famiglia</item>
+        <item>amici</item>
+        <item>partner</item>
+        <item>riposato</item>
+        <item>stanco</item>
+        <item>buon_umore</item>
+        <item>cattivo_umore</item>
+        <item>si_attivita</item>
+        <item>no_attivita</item>
+        <item>colazione</item>
+        <item>pranzo</item>
+       <item>cena</item>
+    </string-array>
+
+
+    <string-array name="categorie">
+        <item>Arene/Sale da concerto</item>
+        <item>Bar</item>
+        <item>Bar con sport in TV</item>
+        <item>Barbecue</item>
+        <item>Birreria</item>
+        <item>Bistrot</item>
+        <item>Brasserie</item>
+        <item>Caffetteria</item>
+        <item>Caffè</item>
+        <item>Caffè/Tè</item>
+        <item>Castelli</item>
+        <item>Cocktail bar</item>
+        <item>Colazioni/Brunch</item>
+        <item>Creperie</item>
+        <item>Cucina britannica</item>
+        <item>Cucina cinese</item>
+        <item>Cucina fusion asiatica</item>
+        <item>Cucina giapponese</item>
+        <item>Cucina greca</item>
+        <item>Cucina irlandese</item>
+        <item>Cucina italiana</item>
+        <item>Cucina mediterranea</item>
+        <item>Cucina messicana</item>
+        <item>Cucina napoletana</item>
+        <item>Cucina pugliese</item>
+        <item>Cucina vegana</item>
+        <item>Dolci</item>
+        <item>Fast food</item>
+        <item>Friggitorie</item>
+        <item>Frullati/Succhi/Centrifugati</item>
+        <item>Gastropub</item>
+        <item>Gelaterie</item>
+        <item>Hamburger</item>
+        <item>Insalate</item>
+        <item>Irish pub</item>
+        <item>Lounge bar</item>
+        <item>Monumenti/Luoghi storici e d interesse</item>
+        <item>Musei</item>
+        <item>Norcinerie</item>
+        <item>Panifici</item>
+        <item>Panini/Sandwich</item>
+        <item>Panzerotti</item>
+        <item>Parchi</item>
+        <item>Pasticcerie</item>
+        <item>Piatti a base di pesce</item>
+        <item>Pizzerie</item>
+        <item>Pub</item>
+        <item>Ristoranti</item>
+        <item>Sale da tè</item>
+        <item>Senza glutine</item>
+        <item>Sushi bar</item>
+        <item>Tapas/snack</item>
+        <item>Trattorie</item>
+        <item>Wine bar</item>
+        <item>Yogurterie</item>
+        <item>Zuppe</item>
+    </string-array>
+    
+</resources>

@@ -1,5 +1,6 @@
 package graphrecommender.jung.com.graphrecommenderapp;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,22 +22,36 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static android.os.SystemClock.sleep;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView centro;
     TextView online;
     Button btn;
     RequestQueue queue;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        new VolleyQueue(this);
+        queue = VolleyQueue.getQueue();
+
+        progress = new ProgressDialog(this);
+        progress.setTitle("Caricamento");
+        progress.setMessage("Sto svegliando il server...");
+        progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
+        progress.show();
+
+        checkOnline();
+
+
         centro = findViewById(R.id.main_text);
         online = findViewById(R.id.online);
         btn = findViewById(R.id.btn);
-        queue = Volley.newRequestQueue(this);
 
         centro.setText("Ciao");
 
@@ -50,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        checkOnline();
 
     }
 
@@ -66,11 +80,15 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         online.setText(response);
+                        progress.dismiss();
+                        btn.setEnabled(true);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                centro.setText("ServiceOffline");
+                centro.setText("Service offline... Try again Later");
+                btn.setEnabled(false);
+                progress.dismiss();
             }
         });
         queue.add(stringRequest);

@@ -16,99 +16,32 @@
         android:id="@+id/titolo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dettagli Richiesta"
+        android:text="Parlami di te"
         android:textSize="25dp"
         android:textColor="@color/black"
         android:textAlignment="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:id="@+id/user"
+
+    <FrameLayout
+        android:id="@+id/dynamic_fragment"
+        android:layout_gravity="top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="user"
-        app:layout_constraintTop_toBottomOf="@id/titolo"/>
-    <EditText
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/user_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintTop_toBottomOf="@id/user"/>
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/history"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="history"
-        app:layout_constraintTop_toBottomOf="@id/user_input"/>
-    <LinearLayout
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        android:id="@+id/lista_h"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/history">
-        <Spinner
-            android:id="@+id/spinner1h"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </Spinner>
-        <Spinner
-            android:layout_marginLeft="10dp"
-            android:id="@+id/spinner2h"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </Spinner>
-    </LinearLayout>
-    <Button
-        android:id="@+id/addH"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:text=" + "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/lista_h"/>
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/contesto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="contesto"
-        app:layout_constraintTop_toBottomOf="@id/addH"/>
-    <Spinner
-        android:layout_marginLeft="10dp"
-        android:id="@+id/spinner_contesti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/contesto">
-    </Spinner>
-    <Button
-        android:layout_marginLeft="10dp"
-        android:id="@+id/addC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" + "
-        app:layout_constraintTop_toBottomOf="@+id/contesto"
-        app:layout_constraintLeft_toRightOf="@id/spinner_contesti" />
+        app:layout_constraintTop_toBottomOf="@id/titolo"
+        />
+
     <Button
         android:layout_marginTop="40dp"
-        android:id="@+id/send"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Invia Richiesta"
-        app:layout_constraintTop_toBottomOf="@id/spinner_contesti"
+        android:text="Avanti"
+        app:layout_constraintTop_toBottomOf="@id/dynamic_fragment"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
     <TextView
         android:id="@+id/response"
         android:textColor="@color/black"
@@ -116,7 +49,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/send"
+        app:layout_constraintTop_toBottomOf="@id/next"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 

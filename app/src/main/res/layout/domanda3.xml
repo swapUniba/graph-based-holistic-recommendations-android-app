@@ -16,22 +16,198 @@
         android:layout_marginLeft="10dp"
         android:textSize="20dp"
         android:layout_marginTop="10dp"
-        android:id="@+id/contesto"
+        android:id="@+id/settimana"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contesto : " />
-
-    <Spinner
-        android:layout_marginLeft="10dp"
-        android:id="@+id/spinner_contesti"
-        android:layout_width="wrap_content"
+        android:text="Settimana : " />
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </Spinner>
-    <Button
+    <ToggleButton
+        android:textOn="Weekday"
+        android:textOff="Weekday"
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:id="@+id/addC"
+        android:id="@+id/set1"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+        <ToggleButton
+            android:textOn="Weekend"
+            android:textOff="Weekend"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/set2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/compagnia"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=" + "/>
-
+        android:text="Compagnia : " />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ToggleButton
+            android:textOn="Famiglia"
+            android:textOff="Famiglia"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/comp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:textOn="Amici"
+            android:textOff="Amici"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/comp2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:textOn="Partner"
+            android:textOff="Partner"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/comp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/umore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Umore : " />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ToggleButton
+            android:textOn="Buono"
+            android:textOff="Buono"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/um1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:textOn="Cattivo"
+            android:textOff="Cattivo"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/um2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/attivita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Attività : " />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ToggleButton
+            android:textOn="Si"
+            android:textOff="Si"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/att1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ToggleButton
+            android:textOn="No"
+            android:textOff="No"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/att2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/condizione"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Condizione : " />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ToggleButton
+            android:textOn="Riposato"
+            android:textOff="Riposato"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/cond1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:textOn="Stanco"
+            android:textOff="Stanco"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/cond2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tempo : " />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ToggleButton
+            android:textOn="Colazione"
+            android:textOff="Colazione"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:textOn="Pranzo"
+            android:textOff="Pranzo"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ToggleButton
+            android:textOn="Cena"
+            android:textOff="Cena"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="contesti1">
+        <item>settimana</item>
+        <item>weekend</item>
+    </string-array>
+
+    <string-array name="contesti2">
+        <item>famiglia</item>
+        <item>amici</item>
+        <item>partner</item>
+    </string-array>
+    <string-array name="contesti3">
+        <item>buon_umore</item>
+        <item>cattivo_umore</item>
+    </string-array>
+    <string-array name="contesti4">
+        <item>si_attivita</item>
+        <item>no_attivita</item>
+    </string-array>
+    <string-array name="contesti5">
+        <item>riposato</item>
+        <item>stanco</item>
+    </string-array>
+    <string-array name="contesti6">
+        <item>colazione</item>
+        <item>pranzo</item>
+        <item>cena</item>
+    </string-array>
+
     <string-array name="contesti">
         <item>settimana</item>
         <item>weekend</item>
@@ -14,7 +42,7 @@
         <item>no_attivita</item>
         <item>colazione</item>
         <item>pranzo</item>
-       <item>cena</item>
+        <item>cena</item>
     </string-array>
 
 

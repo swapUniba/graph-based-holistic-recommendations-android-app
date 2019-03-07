@@ -32,7 +32,7 @@ public class Page1 extends AppCompatActivity {
 
     Button next;
     ProgressDialog progress;
-    TextView contesto;
+    ArrayList contesti;
     TextView historyTV;
     EditText user;
     int posizione=0;
@@ -45,9 +45,6 @@ public class Page1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page1);
-        //TODO
-        //getSupportActionBar().
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
 
         fragment = new Domanda1();
         setDefaultFragment(fragment);
@@ -86,8 +83,8 @@ public class Page1 extends AppCompatActivity {
                 fragment = new Domanda3();
                 break;
             case 2:
-                contesto = findViewById(R.id.contesto);
-                if(!contesto.getText().toString().equals("Contesto : ")) check= true;
+                contesti = Domanda3.getContesti();
+                if(!contesti.isEmpty()) check= true;
                 break;
         }
 
@@ -107,7 +104,7 @@ public class Page1 extends AppCompatActivity {
                 progress.show();
             }
         }
-        else Toast.makeText(this,"Campo Obbligatorio", Toast.LENGTH_SHORT).show();
+        else Toast.makeText(this,"Compila almeno un campo", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -157,7 +154,10 @@ public class Page1 extends AppCompatActivity {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progress.dismiss();
                 Toast.makeText(Page1.this,"Errore di comunicazione con il server", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Page1.this, MainActivity.class);
+                startActivity(i);
             }
         });
         queue.add(jsonRequest);
@@ -183,132 +183,5 @@ public class Page1 extends AppCompatActivity {
         // Commit the Fragment replace action.
         fragmentTransaction.commit();
     }
-
-
-
-
-/*
-    private void toNext(int posizione) {
-
-        if (View != null) ViewHolder.removeView(View);
-
-            int domandaID=0;
-            switch (posizione) {
-                case 0:
-                    domandaID = R.layout.domanda1;
-                    posizione++;
-                    break;
-                case 1:
-                    domandaID = R.layout.domanda2;
-                    posizione++;
-                    break;
-                case 2:
-                    domandaID = R.layout.domanda3;
-                    posizione++;
-                    break;
-            }
-
-            View = getLayoutInflater().inflate(domandaID, null);
-            ViewHolder.addView(View);
-    }
-
-    private void domanda12(){
-        if(user.getText()!=null){
-        nome = user.getText().toString();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-            Domanda2 fragment = new Domanda2();
-            //fragmentTransaction.add(R.id.viewer, fragment);
-            fragmentTransaction.commit();
-
-            posizione++;
-        }
-        else Toast.makeText(this,"Campo Obbligatorio", Toast.LENGTH_SHORT).show();
-    }
-
-*/
-    /*
-
-        <fragment android:name="graphrecommender.jung.com.graphrecommenderapp.Domanda1"
-        android:id="@+id/viewer"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/titolo"/>
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page1);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        next=findViewById(R.id.next);
-        contesto=findViewById(R.id.contesto);
-        historyTV=findViewById(R.id.history);
-        response=findViewById(R.id.response);
-        user=findViewById(R.id.user_input);
-        contesti = new ArrayList();
-        history = new HashMap();
-
-
-
-        spinner = findViewById(R.id.spinner_contesti);
-        spinner1h =findViewById(R.id.spinner1h);
-        spinner2h =findViewById(R.id.spinner2h);
-
-
-        ArrayAdapter spinnerAdapter = ArrayAdapter.createFromResource(this,
-                R.array.contesti, android.R.layout.simple_spinner_item);
-        spinnerAdapter
-                .setDropDownViewResource(android.R.layout.simple_spinner_item);
-
-        ArrayAdapter spinnerAdapter2 = ArrayAdapter.createFromResource(this,
-                R.array.categorie, android.R.layout.simple_spinner_item);
-        spinnerAdapter2
-                .setDropDownViewResource(android.R.layout.simple_spinner_item);
-
-        spinner.setAdapter(spinnerAdapter);
-        spinner1h.setAdapter(spinnerAdapter);
-        spinner2h.setAdapter(spinnerAdapter2);
-
-        addC= findViewById(R.id.addC);
-        addH= findViewById(R.id.addH);
-
-        addC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                contesti.add(spinner.getSelectedItem().toString());
-                addContesto();
-            }
-        });
-
-        addH.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(history.containsKey(spinner1h.getSelectedItem().toString())) history.get(spinner1h.getSelectedItem().toString()).add(spinner2h.getSelectedItem().toString());
-                else {
-                    ArrayList<String> list = new ArrayList();
-                    list.add(spinner2h.getSelectedItem().toString());
-                    history.put(spinner1h.getSelectedItem().toString(), list);
-                }
-                addHistory();
-            }
-        });
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("TAG","SendClick");
-                try {
-                    sendPost();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-    }
-*/
 
 }

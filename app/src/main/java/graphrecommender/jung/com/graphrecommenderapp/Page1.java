@@ -33,12 +33,14 @@ public class Page1 extends AppCompatActivity {
     Button next;
     ProgressDialog progress;
     ArrayList contesti;
-    TextView historyTV;
+    String[] cont;
+    HashMap<String, ArrayList<String>> history = new HashMap<>();
     EditText user;
     int posizione=0;
     Fragment fragment;
     String nome;
     TextView titolo;
+    ArrayList<Spinner> spins;
 
 
     @Override
@@ -49,6 +51,7 @@ public class Page1 extends AppCompatActivity {
         fragment = new Domanda1();
         setDefaultFragment(fragment);
 
+        cont = getResources().getStringArray(R.array.contesti);
         titolo = findViewById(R.id.titolo);
         next = findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +67,7 @@ public class Page1 extends AppCompatActivity {
 
     }
 
+
     private void toNext() throws JSONException {
 
         Log.d("TAG",""+ posizione);
@@ -76,10 +80,12 @@ public class Page1 extends AppCompatActivity {
                 fragment = new Domanda2();
                 break;
             case 1:
-                historyTV = findViewById(R.id.history);
-                if(!historyTV.getText().toString().equals("Preferenze : ")){
+                if(spinCheck()){
+                    mapHistory();
+                    Log.d("TAG", history.toString());
                     next.setText("Invia Richiesta");
-                    check= true;}
+                    check= true;
+                }
                 fragment = new Domanda3();
                 break;
             case 2:
@@ -120,9 +126,9 @@ public class Page1 extends AppCompatActivity {
         }
         json.put("contesto",array);
         JSONObject mappa=new JSONObject();
-        for (String s: Domanda2.getMappa().keySet()) {
+        for (String s: history.keySet()) {
             JSONArray arr = new JSONArray();
-            for (String s1: Domanda2.getMappa().get(s)) {
+            for (String s1: history.get(s)) {
                 arr.put(s1);
             }
             mappa.put(s,arr);
@@ -184,4 +190,29 @@ public class Page1 extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+
+
+    private boolean spinCheck(){
+        boolean toRet= false;
+        spins = Domanda2.getSpins();
+        for (int i = 0; i < 28; i++) {
+            if(spins.get(i).getSelectedItemPosition() != 0) toRet=true;
+        }
+        return toRet;
+    }
+
+    private void mapHistory(){
+        for (int i = 0; i < 28; i++) {
+               if(spins.get(i).getSelectedItemPosition()!=0){
+                   if(history.containsKey(cont[i/2])){
+                       history.get(cont[i/2]).add(spins.get(i).getSelectedItem().toString());
+                   }
+                   else{
+                       ArrayList<String> list = new ArrayList<>();
+                       list.add(spins.get(i).getSelectedItem().toString());
+                       history.put(cont[i/2], list);
+                   }
+               }
+        }
+    }
 }

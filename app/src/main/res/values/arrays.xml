@@ -34,12 +34,12 @@
         <item>famiglia</item>
         <item>amici</item>
         <item>partner</item>
-        <item>riposato</item>
-        <item>stanco</item>
         <item>buon_umore</item>
         <item>cattivo_umore</item>
         <item>si_attivita</item>
         <item>no_attivita</item>
+        <item>riposato</item>
+        <item>stanco</item>
         <item>colazione</item>
         <item>pranzo</item>
         <item>cena</item>
@@ -47,6 +47,7 @@
 
 
     <string-array name="categorie">
+        <item>Scegli</item>
         <item>Arene/Sale da concerto</item>
         <item>Bar</item>
         <item>Bar con sport in TV</item>
